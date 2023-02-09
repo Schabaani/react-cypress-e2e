@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
 describe('ButtonFooter', () => {
+  // https://jestjs.io/docs/mock-functions
   const click = jest.fn()
 
   const doAssertions = async (label: string) => {
@@ -13,7 +14,7 @@ describe('ButtonFooter', () => {
     await userEvent.click(
       await screen.findByTestId(`${label.toLowerCase()}-button`),
     )
-    expect(click).toHaveBeenCalled()
+    expect(click.mock.calls).toHaveLength(1)
   }
 
   it('should render and Edit button, the label, and trigger an onClick', async () => {
