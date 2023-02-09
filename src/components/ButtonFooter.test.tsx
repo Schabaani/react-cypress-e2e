@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
 
 describe('ButtonFooter', () => {
+  // https://jestjs.io/docs/jest-object#jestfnimplementation
   // https://jestjs.io/docs/mock-functions
   const click = jest.fn()
 
